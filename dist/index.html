@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Обратная связь</title>
+    <link href="reset.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="formWrapper">
+      <div id="formLabel">Напишите нам</div>
+      <form id="formFB">
+        <label for="inpName">Имя</label>
+        <input id="inpName" name="Name" type="text" placeholder="Кот Котофеич" required="true">
+        <label for="inpBday">Дата рождения</label>
+        <input id="inpBday" name="Birthday" type="date" required="true">
+        <label for="inpTel">Телефон</label>
+        <input id="inpTel" name="Phone" type="tel" placeholder="+78001234567" required="true" maxlength="12" pattern="+[0-9]{11}">
+        <label for="inpEmail">Почта</label>
+        <input id="inpEmail" name="Email" type="email" placeholder="kotofei@catmail.com" required="true">
+        <label for="inpText">Ваш вопрос:</label>
+        <textarea id="inpText" name="Text" placeholder="А мыши кто?" required="true"></textarea>
+        <input id="btnSubmit" name="btnSubmit" type="submit" value="ОТПРАВИТЬ">
+      </form>
+    </div>
+  </body>
+</html>

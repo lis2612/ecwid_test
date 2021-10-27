@@ -1,0 +1,29 @@
+doctype
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title="Обратная связь"
+    link(href="reset.css", rel="stylesheet")
+    link(href="style.css", rel="stylesheet")
+    script(src="script.js")
+  body
+    #formWrapper
+      #formLabel Напишите нам
+      form#formFB()
+        label(for="inpName") Имя
+        input#inpName(name="Name" type="text" placeholder="Кот Котофеич" required="true")
+
+        label(for="inpBday") Дата рождения
+        input#inpBday(name="Birthday", type="date", required="true")
+
+        label(for="inpTel") Телефон
+        input#inpTel(name="Phone" type="tel" placeholder="+78001234567" required="true" maxlength="12" pattern="+[0-9]{11}")
+
+        label(for="inpEmail") Почта
+        input#inpEmail(name="Email" type="email" placeholder="kotofei@catmail.com" required="true")
+
+        label(for="inpText") Ваш вопрос:
+        textarea#inpText(name="Text" placeholder="А мыши кто?" required="true")
+
+        input#btnSubmit(name="btnSubmit" type="submit" value="ОТПРАВИТЬ")
+
