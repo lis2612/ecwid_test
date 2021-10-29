@@ -5,22 +5,22 @@
     <title>Обратная связь</title>
     <link href="reset.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <div id="formWrapper">
       <div id="formLabel">Напишите нам</div>
       <form id="formFB">
         <label for="inpName">Имя</label>
-        <input id="inpName" name="Name" type="text" placeholder="Кот Котофеич" required="true">
+        <input id="inpName" name="Name" type="text" placeholder="Кот Котофеич">
         <label for="inpBday">Дата рождения</label>
-        <input id="inpBday" name="Birthday" type="date" required="true">
+        <input id="inpBday" name="Birthday" type="date">
         <label for="inpTel">Телефон</label>
-        <input id="inpTel" name="Phone" type="tel" placeholder="+78001234567" required="true" maxlength="12" pattern="+[0-9]{11}">
+        <input id="inpTel" name="Phone" type="tel" placeholder="+78001234567" maxlength="14">
         <label for="inpEmail">Почта</label>
-        <input id="inpEmail" name="Email" type="email" placeholder="kotofei@catmail.com" required="true">
+        <input id="inpEmail" name="Email" type="email" placeholder="kotofei@catmail.com">
         <label for="inpText">Ваш вопрос:</label>
-        <textarea id="inpText" name="Text" placeholder="А мыши кто?" required="true"></textarea>
+        <textarea id="inpText" name="Text" placeholder="А мыши кто?"></textarea>
         <input id="btnSubmit" name="btnSubmit" type="submit" value="ОТПРАВИТЬ">
       </form>
     </div>
