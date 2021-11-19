@@ -6,7 +6,7 @@ var userEmail = document.getElementById('inpEmail');
 var userText = document.getElementById('inpText');
 var btnSubmit = document.getElementById('btnSubmit');
 
-function popupSubmit(event) {
+function validateAndSend(event) {
   event.preventDefault();
   if (
     !userName.value ||
@@ -38,23 +38,36 @@ function popupSubmit(event) {
     //Get data from form
     //let form = document.forms.formFB;
     const templateHTML = [
-      '<!DOCTYPE html> \n',
-      '  <html lang="ru"> \n',
-      '    <head> \n',
-      '      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> \n',
-      '      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>\n',
-      '    </head> \n',
-      '    <body> \n',
-      `       <div border="1px">`,
-      `         <div style="border: 1px;">Имя: ${userName.value}</div>`,
-      `         <div>Дата рождения: ${userBDay.value}</div>`,
-      `         <div>Телефон: ${userPhone.value}</div>`,
-      `         <div>E-mail: ${userEmail.value}</div>`,
-      `         <div>Сообщение: ${userText.value}</div>`,
-      '       </div>\n',
-      '    </body> \n',
-      '  </html>',
-    ].join('');
+`      <!DOCTYPE html public>`,
+`<html lang="ru">`,
+`  <head>`,
+`    <meta charset="UTF-8"/>`,
+`    <title>Письмо с сайта</title>`,
+`  </head>`,
+`  <body style="font-family: Verdana, Geneva, sans-serif;">`,
+`    <table frame="border" rules="none" border="1" cellpadding="0" cellspacing="0" bgcolor="#eeeeee" style="margin:0 auto; padding:0; width: 600px; border-radius:8px">`,
+`      <tr height="50px"><td style="font-size:20px; text-align:center;"><b>Танцуйте, Вам письмо!</b></td></tr>`,
+`      <tr height="50px"><td style="text-align:center;"><i>Вот всё, что мы знаем об отправителе:</i></td></tr>`,
+`      <tr><td><table frame="border" rules="none" border="1" cellpadding="0" cellspacing="0" bgcolor="#fff" style="width:95%; margin:0 auto; padding:0;">`,
+`            <tr><td style="text-align:left; padding-left:15px">Его зовут: ${userName.value}</td></tr>`,
+`            <tr><td style="text-align:left; padding-left:15px">Он родился: ${userBDay.value}</td></tr>`,
+`            <tr><td style="text-align:left; padding-left:15px">Его номер телефона:<a href="tel:${userPhone.value}" value="${userPhone.value}" target="_blank">${userPhone.value}</a></td></tr>`,
+`            <tr><td style="text-align:left; padding-left:15px">Его почта:<a href="mailto:${userEmail.value}" target="_blank">${userEmail.value}</a></td></tr>`,
+`            <tr><td style="text-align:left; padding-left:15px">А вот что он написал:</td></tr>`,
+`            <tr><td style="text-align:left; padding-left:15px"><i>${userText.value}</i></td></tr>`,
+`          </table></td></tr>`,
+`      <tr height="50px"><td style="text-align:center;"><i>Возможно, он очень ждет ответа...</i></td></tr></table>`,
+`  </body>`,
+`</html>`,
+    ].join('\n');
+
+    // Email.send({
+    //   SecureToken: 'a5e2add3-4073-485a-b25c-3972602d89b0',
+    //   To: 'lyamin.ilya.s@gmail.com',
+    //   From: 'testmail87@internet.ru',
+    //   Subject: 'Вам что-то оставили...',
+    //   Body: templateHTML,
+    // }).then((message) => alert(message));
 
     Email.send({
       SecureToken: 'a5e2add3-4073-485a-b25c-3972602d89b0',
@@ -62,7 +75,13 @@ function popupSubmit(event) {
       From: 'testmail87@internet.ru',
       Subject: 'Вам что-то оставили...',
       Body: templateHTML,
-    }).then((message) => alert(message));
+    }).then((message) => {
+      if (message == "OK") {
+        alert("Ваше письмо успешно отправлено!");
+        userForm.reset();
+      }
+      else alert(`Что-то пошло не так... \n Возможно эта информация будет полезна: \n ${message}`)
+    });
   }
 }
 
@@ -109,7 +128,7 @@ function validateText() {
 }
 
 window.onload = function () {
-  userForm.addEventListener('submit', popupSubmit);
+  userForm.addEventListener('submit', validateAndSend);
   userName.addEventListener('blur', validateName);
   userBDay.addEventListener('blur', validateBDay);
   userPhone.addEventListener('blur', validatePhone);
