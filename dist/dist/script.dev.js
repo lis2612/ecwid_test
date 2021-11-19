@@ -7,7 +7,6 @@ var userPhone = document.getElementById('inpTel');
 var userEmail = document.getElementById('inpEmail');
 var userText = document.getElementById('inpText');
 var btnSubmit = document.getElementById('btnSubmit');
-var templateHTML = ['<!DOCTYPE html> \n', '  <html lang="en"> \n', '    <head> \n', '      <meta charset="utf-8"> \n', '      <title>Обратная связь</title> \n', '    </head> \n', '    <body> \n', '      <div id="formWrapper"> \n', '        <div id="formLabel">Напишите нам</div> \n', '        <form id="formFB"> \n', '          <label for="inpName">Имя</label> \n', '          <input id="inpName" name="Name" type="text" placeholder="Кот Котофеич"> \n', '          <label for="inpBday">Дата рождения</label> \n', '          <input id="inpBday" name="Birthday" type="date"> \n', '          <label for="inpTel">Телефон</label> \n', '          <input id="inpTel" name="Phone" type="tel" placeholder="+78001234567" maxlength="14"> \n', '          <label for="inpEmail">Почта</label> \n', '          <input id="inpEmail" name="Email" type="email" placeholder="kotofei@catmail.com"> \n', '          <label for="inpText">Ваш вопрос:</label> \n', '          <textarea id="inpText" name="Text" placeholder="А мыши кто?"></textarea> \n', '          <input id="btnSubmit" name="btnSubmit" type="submit" value="ОТПРАВИТЬ"> \n', '        </form> \n', '      </div> \n', '    </body> \n', '  </html>'].join('');
 
 function popupSubmit(event) {
   event.preventDefault();
@@ -25,10 +24,8 @@ function popupSubmit(event) {
   if (userName.style.borderColor != 'red' && userBDay.style.borderColor != 'red' && userPhone.style.borderColor != 'red' && userEmail.style.borderColor != 'red' && userText.style.borderColor != 'red') {
     //Get data from form
     //let form = document.forms.formFB;
+    var templateHTML = ['<!DOCTYPE html> \n', '  <html lang="ru"> \n', '    <head> \n', '      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> \n', '      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>\n', '    </head> \n', '    <body> \n', "       <div border=\"1px\">", "         <div style=\"border: 1px;\">\u0418\u043C\u044F: ".concat(userName.value, "</div>"), "         <div>\u0414\u0430\u0442\u0430 \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F: ".concat(userBDay.value, "</div>"), "         <div>\u0422\u0435\u043B\u0435\u0444\u043E\u043D: ".concat(userPhone.value, "</div>"), "         <div>E-mail: ".concat(userEmail.value, "</div>"), "         <div>\u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435: ".concat(userText.value, "</div>"), '       </div>\n', '    </body> \n', '  </html>'].join('');
     Email.send({
-      // Host: 'smtp.mail.ru',
-      // Username: 'testmail87@internet.ru',
-      // Password: 'JViT2FZndzPjKVhvmq9X',
       SecureToken: 'a5e2add3-4073-485a-b25c-3972602d89b0',
       To: 'lyamin.ilya.s@gmail.com',
       From: 'testmail87@internet.ru',
