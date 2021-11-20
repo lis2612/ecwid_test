@@ -1,10 +1,10 @@
-var userForm = document.getElementById('formFB');
-var userName = document.getElementById('inpName');
-var userBDay = document.getElementById('inpBday');
-var userPhone = document.getElementById('inpTel');
-var userEmail = document.getElementById('inpEmail');
-var userText = document.getElementById('inpText');
-var btnSubmit = document.getElementById('btnSubmit');
+var userForm = document.getElementById('form-feedback');
+var userName = document.getElementById('inp-name');
+var userBDay = document.getElementById('inp-bday');
+var userPhone = document.getElementById('inp-tel');
+var userEmail = document.getElementById('inp-email');
+var userText = document.getElementById('inp-text');
+var btnSubmit = document.getElementById('btn-submit');
 
 function validateAndSend(event) {
   event.preventDefault();

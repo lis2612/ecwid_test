@@ -8,24 +8,24 @@ html(lang="en")
     script(src="script.js" defer)
     script(src="https://smtpjs.com/v3/smtp.js" defer)
   body
-    #formWrapper
-      #formLabel Напишите нам
-      form#formFB()
-        label(for="inpName") Имя
-        input#inpName(name="Name" type="text" placeholder="Кот Котофеич")
+    #form-wrapper
+      #form-label Напишите нам
+      form#form-feedback()
+        label(for="inp-name") Имя
+        input#inp-name(name="Name" type="text" placeholder="Кот Котофеич")
 
-        label(for="inpBday") Дата рождения
-        input#inpBday(name="Birthday", type="date")
+        label(for="inp-bday") Дата рождения
+        input#inp-bday(name="Birthday", type="date")
 
-        label(for="inpTel") Телефон
-        input#inpTel(name="Phone" type="tel" placeholder="+78001234567" maxlength="14")
+        label(for="inp-tel") Телефон
+        input#inp-tel(name="Phone" type="tel" placeholder="+78001234567" maxlength="14")
 
-        label(for="inpEmail") Почта
-        input#inpEmail(name="Email" type="email" placeholder="kotofei@catmail.com")
+        label(for="inp-email") Почта
+        input#inp-email(name="Email" type="email" placeholder="kotofei@catmail.com")
 
-        label(for="inpText") Ваш вопрос:
-        textarea#inpText(name="Text" placeholder="А мыши кто?")
+        label(for="inp-text") Ваш вопрос:
+        textarea#inp-text(name="Text" placeholder="А мыши кто?")
 
-        input#btnSubmit(name="btnSubmit" type="submit" value="ОТПРАВИТЬ")
+        input#btn-submit(name="btnSubmit" type="submit" value="ОТПРАВИТЬ")
 
 
