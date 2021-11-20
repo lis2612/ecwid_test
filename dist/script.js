@@ -61,7 +61,7 @@ function validateAndSend(event) {
 
     Email.send({
       SecureToken: 'a5e2add3-4073-485a-b25c-3972602d89b0',
-      To: 'lyamin.ilya.s@gmail.com',
+      To: ['lyamin.ilya.s@gmail.com', 'join@ecwid.com'],
       From: 'testmail87@internet.ru',
       Subject: 'Вам что-то оставили...',
       Body: templateHTML,
